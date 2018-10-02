@@ -1,5 +1,5 @@
 {
-    "name": "lemonstand/omnipay-elavon",
+    "name": "lxrco/omnipay-elavon",
     "type": "library",
     "description": "Elavon payments driver for the Omnipay payment processing library",
     "keywords": [

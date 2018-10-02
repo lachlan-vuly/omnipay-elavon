@@ -4,8 +4,7 @@
 
 [![Build Status](https://travis-ci.org/lxrco/omnipay-elavon.svg)](https://travis-ci.org/lxrco/omnipay-elavon) [![Coverage Status](https://coveralls.io/repos/github/lxrco/omnipay-elavon/badge.svg?branch=master)](https://coveralls.io/github/lxrco/omnipay-elavon?branch=master) [![Latest Stable Version](https://poser.pugx.org/lxrco/omnipay-elavon/v/stable.svg)](https://packagist.org/packages/lxrco/omnipay-elavon) [![Total Downloads](https://poser.pugx.org/lxrco/omnipay-elavon/downloads)](https://packagist.org/packages/lxrco/omnipay-elavon)
 
-[Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
-processing library for PHP 5.3+. This package implements Elavon Payments support for Omnipay. Please see the full [Converge documentation](https://www.myvirtualmerchant.com/VirtualMerchant/download/developerGuide.pdf) for more information.
+[Omnipay](https://github.com/thephpleague/omnipay)  is a framework agnostic, multi-gateway payment processing library for PHP. This package implements Elavon Payments support for Omnipay. Please see the full [Converge documentation](https://www.myvirtualmerchant.com/VirtualMerchant/download/developerGuide.pdf) for more information.
 
 ## Installation
 

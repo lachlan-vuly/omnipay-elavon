@@ -24,9 +24,9 @@ The following gateways are provided by this package:
 <?php
     $gateway = \Omnipay\Omnipay::create('Elavon_Converge')->initialize([
         'merchantId' => '000000',
-         'username' => 'USERNAME',
-         'password' => 'PASSWORD',
-         'testMode' => true,// False by default
+        'username' => 'USERNAME',
+        'password' => 'PASSWORD',
+        'testMode' => true,// False by default
     ]);
 
     $params = array(

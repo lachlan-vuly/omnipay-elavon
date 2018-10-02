@@ -18,6 +18,10 @@
         {
             "name": "LemonStand",
             "email": "andy@lemonstand.com"
+        },
+        {
+            "name": "LXRandCo",
+            "email": "hugo.v@lxrco.com"
         }
     ],
     "autoload": {

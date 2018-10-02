@@ -7,7 +7,7 @@
         "converge",
         "gateway",
         "merchant",
-        "omnipay",        
+        "omnipay",
         "pay",
         "payment",
         "payments"
@@ -21,17 +21,25 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Omnipay\\Elavon\\" : "src/" }
+        "psr-4": {
+            "Omnipay\\Elavon\\": "src/"
+        }
     },
     "require": {
-        "omnipay/common": "~2.0"
+        "omnipay/common": "^3.0"
     },
     "require-dev": {
-        "omnipay/tests": "~2.0"
+        "omnipay/tests": "^3.0",
+        "squizlabs/php_codesniffer": "^3.3"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 src/",
+        "fix-style": "phpcbf -p --standard=PSR2 src/"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.0.x-dev"
+            "dev-master": "3.0.x-dev"
         }
     }
 }

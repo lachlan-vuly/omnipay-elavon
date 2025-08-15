@@ -321,6 +321,122 @@ abstract class ConvergeAbstractRequest extends \Omnipay\Common\Message\AbstractR
         return $this->getParameter('integrationTesting');
     }
 
+    /*
+     * === 3D SECURE PARAMETERS ===
+     */
+    public function getEciInd()
+    {
+        return $this->getParameter('ssl_eci_ind');
+    }
+
+    public function get3dSecureValue()
+    {
+        return $this->getParameter('ssl_3dsecure_value');
+    }
+
+    public function getProgramProtocol()
+    {
+        return $this->getParameter('ssl_program_protocol');
+    }
+
+    public function getDirServerTranId()
+    {
+        return $this->getParameter('ssl_dir_server_tran_id');
+    }
+
+    public function getDirServerTransId()
+    {
+        return $this->getParameter('ssl_3ds_server_trans_id');
+    }
+
+    public function get3dsMessageVersion()
+    {
+        return $this->getParameter('ssl_3ds_message_version');
+    }
+
+    public function get3dsTransStatus()
+    {
+        return $this->getParameter('ssl_3ds_trans_status');
+    }
+
+    public function get3dsTransStatusReason()
+    {
+        return $this->getParameter('ssl_3ds_trans_status_reason');
+    }
+
+    public function setEciInd($value)
+    {
+        return $this->setParameter('ssl_eci_ind', $value);
+    }
+
+    public function set3dSecureValue($value)
+    {
+        return $this->setParameter('ssl_3dsecure_value', $value);
+    }
+
+    public function setProgramProtocol($value)
+    {
+        return $this->setParameter('ssl_program_protocol', $value);
+    }
+
+    public function setDirServerTranId($value)
+    {
+        return $this->setParameter('ssl_dir_server_tran_id', $value);
+    }
+
+    public function setDirServerTransId($value)
+    {
+        return $this->setParameter('ssl_3ds_server_trans_id', $value);
+    }
+
+    public function set3dsMessageVersion($value)
+    {
+        return $this->setParameter('ssl_3ds_message_version', $value);
+    }
+
+    public function set3dsTransStatus($value)
+    {
+        return $this->setParameter('ssl_3ds_trans_status', $value);
+    }
+
+    public function set3dsTransStatusReason($value)
+    {
+        return $this->setParameter('ssl_3ds_trans_status_reason', $value);
+    }
+
+    /*
+     * === AVS PARAMETERS ===
+     */
+    public function getAvsAddress()
+    {
+        return $this->getParameter('ssl_avs_address');
+    }
+
+    public function getAvsZip()
+    {
+        return $this->getParameter('ssl_avs_zip');
+    }
+
+    public function setAvsAddress($value)
+    {
+        return $this->setParameter('ssl_avs_address', $value);
+    }
+
+    public function setAvsZip($value)
+    {
+        return $this->setParameter('ssl_avs_zip', $value);
+    }
+
+    public function setFirstName($value)
+    {
+        return $this->setParameter('ssl_first_name', $value);
+    }
+    
+    public function setLastName($value)
+    {
+        return $this->setParameter('ssl_last_name', $value);
+    }
+
     /**
      * Set the IntegrationTesting boolean value. If this is true, you can run test transactions that actually create a
      * transaction in an Elavon account so you can then run tests like a refund.
@@ -353,6 +469,28 @@ abstract class ConvergeAbstractRequest extends \Omnipay\Common\Message\AbstractR
             'ssl_result_format' => $this->getSslResultFormat(),
             'ssl_invoice_number' => $this->getSslInvoiceNumber(),
         );
+
+        if ($this->get3dSecureValue()) {
+            $data = array_merge($data, [
+                'ssl_eci_ind' => $this->getEciInd(),
+                'ssl_3dsecure_value' => $this->get3dSecureValue(),
+                'ssl_program_protocol' => $this->getProgramProtocol(),
+                'ssl_dir_server_tran_id' => $this->getDirServerTranId(),
+                'ssl_3ds_server_trans_id' => $this->getDirServerTransId(),
+                'ssl_3ds_message_version' => $this->get3dsMessageVersion(),
+                'ssl_3ds_trans_status' => $this->get3dsTransStatus(),
+                'ssl_3ds_trans_status_reason' => $this->get3dsTransStatusReason(),
+            ]);
+        }
+
+        if ($this->getAvsAddress()) {
+            $data = array_merge($data, [
+                'ssl_avs_address' => $this->getAvsAddress(),
+                'ssl_avs_zip' => $this->getAvsZip(),
+                'ssl_first_name' => $this->getSslFirstName(),
+                'ssl_last_name' => $this->getSslLastName(),
+            ]);
+        }
 
         return $data;
     }

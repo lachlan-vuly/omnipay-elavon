@@ -1,5 +1,5 @@
 {
-    "name": "lxrco/omnipay-elavon",
+    "name": "vulyplay/omnipay-elavon",
     "type": "library",
     "description": "Elavon payments driver for the Omnipay payment processing library",
     "keywords": [
@@ -12,7 +12,7 @@
         "payment",
         "payments"
     ],
-    "homepage": "https://github.com/lemonstand/omnipay-elavon",
+    "homepage": "https://github.com/vulyplay/omnipay-elavon",
     "license": "MIT",
     "authors": [
         {
@@ -30,11 +30,13 @@
         }
     },
     "require": {
-        "omnipay/common": "^3.0"
+        "omnipay/common": "^3.0",
+        "symfony/http-client": "^7.3"
     },
     "require-dev": {
-        "omnipay/tests": "^3.0",
-        "squizlabs/php_codesniffer": "^3.3"
+        "omnipay/tests": "^4.2.0",
+        "squizlabs/php_codesniffer": "^3.3",
+        "http-interop/http-factory-guzzle": "^1.2"
     },
     "scripts": {
         "test": "phpunit",
@@ -44,6 +46,11 @@
     "extra": {
         "branch-alias": {
             "dev-master": "3.0.x-dev"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
         }
     }
 }

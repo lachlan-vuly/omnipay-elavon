@@ -205,6 +205,62 @@ class ConvergeGateway extends AbstractGateway
         return $this->setParameter('ssl_result_format', $value);
     }
 
+    /*
+     * === 3D SECURE PARAMETERS ===
+     */
+    public function setEciInd($value)
+    {
+        return $this->setParameter('ssl_eci_ind', $value);
+    }
+    public function set3dSecureValue($value)
+    {
+        return $this->setParameter('ssl_3dsecure_value', $value);
+    }
+    public function setProgramProtocol($value)
+    {
+        return $this->setParameter('ssl_program_protocol', $value);
+    }
+    public function setDirServerTranId($value)
+    {
+        return $this->setParameter('ssl_dir_server_tran_id', $value);
+    }
+    public function setDirServerTransId($value)
+    {
+        return $this->setParameter('ssl_3ds_server_trans_id', $value);
+    }
+    public function set3dsMessageVersion($value)
+    {
+        return $this->setParameter('ssl_3ds_message_version', $value);
+    }
+    public function set3dsTransStatus($value)
+    {
+        return $this->setParameter('ssl_3ds_trans_status', $value);
+    }
+    public function set3dsTransStatusReason($value)
+    {
+        return $this->setParameter('ssl_3ds_trans_status_reason', $value);
+    }
+
+    /*
+     * === AVS PARAMETERS ===
+     */
+    public function setAvsAddress($value)
+    {
+        return $this->setParameter('ssl_avs_address', $value);
+    }
+    public function setAvsZip($value)
+    {
+        return $this->setParameter('ssl_avs_zip', $value);
+    }
+    public function setFirstName($value)
+    {
+        return $this->setParameter('ssl_first_name', $value);
+    }
+    public function setLastName($value)
+    {
+        return $this->setParameter('ssl_last_name', $value);
+    }
+
     /**
      * @param array $parameters
      * @return \Omnipay\Elavon\Message\ConvergeAuthorizeRequest

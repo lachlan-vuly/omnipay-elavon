@@ -2,16 +2,17 @@
 
 **Elavon payment processing driver for the Omnipay PHP payment processing library**
 
-[![Build Status](https://travis-ci.org/lxrco/omnipay-elavon.svg)](https://travis-ci.org/lxrco/omnipay-elavon) [![Coverage Status](https://coveralls.io/repos/github/lxrco/omnipay-elavon/badge.svg?branch=master)](https://coveralls.io/github/lxrco/omnipay-elavon?branch=master) [![Latest Stable Version](https://poser.pugx.org/lxrco/omnipay-elavon/v/stable.svg)](https://packagist.org/packages/lxrco/omnipay-elavon) [![Total Downloads](https://poser.pugx.org/lxrco/omnipay-elavon/downloads)](https://packagist.org/packages/lxrco/omnipay-elavon)
+*This repo is a fork of [lxrco/omnipay-elavon](https://github.com/lxrco/omnipay-elavon) that adds support for 3D Secure and Address Verification Service parameters.*
+
 
 [Omnipay](https://github.com/thephpleague/omnipay)  is a framework agnostic, multi-gateway payment processing library for PHP. This package implements Elavon Payments support for Omnipay. Please see the full [Converge documentation](https://www.myvirtualmerchant.com/VirtualMerchant/download/developerGuide.pdf) for more information.
 
 ## Installation
 
-Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply require `league/omnipay` and `lxrco/omnipay-elavon`
+Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply require `league/omnipay` and `vulyplay/omnipay-elavon`
 
 ```bash
-composer require league/omnipay lxrco/omnipay-elavon
+composer require league/omnipay vulyplay/omnipay-elavon
 ```
 
 ## Basic Usage
@@ -35,6 +36,20 @@ The following gateways are provided by this package:
         'ssl_invoice_number'    => 1,
         'ssl_show_form'         => 'false',
         'ssl_result_format'     => 'ASCII',
+
+        // 3D Secure
+        'ssl_eci_ind' => '...',
+        'ssl_3dsecure_value' => '...',
+        'ssl_program_protocol' => '...',
+        'ssl_dir_server_tran_id' => '...',
+        'ssl_3ds_server_trans_id' => '...',
+        'ssl_3ds_message_version' => '...',
+        'ssl_3ds_trans_status' => '...',
+        'ssl_3ds_trans_status_reason' => '...',
+
+        // AVS
+        'ssl_avs_address' => '...',
+        'ssl_avs_zip' => '...'
     );
 
     $response = $gateway->purchase($params)->send();
@@ -62,5 +77,5 @@ If you want to keep up to date with release anouncements, discuss ideas for the 
 or ask more detailed questions, there is also a [mailing list](https://groups.google.com/forum/#!forum/omnipay) which
 you can subscribe to.
 
-If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/lxrco/omnipay-elavon/issues),
+If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/lachlan-vuly/omnipay-elavon/issues),
 or better yet, fork the library and submit a pull request.

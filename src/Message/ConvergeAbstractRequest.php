@@ -431,7 +431,7 @@ abstract class ConvergeAbstractRequest extends \Omnipay\Common\Message\AbstractR
     {
         return $this->setParameter('ssl_first_name', $value);
     }
-    
+
     public function setLastName($value)
     {
         return $this->setParameter('ssl_last_name', $value);
@@ -470,7 +470,7 @@ abstract class ConvergeAbstractRequest extends \Omnipay\Common\Message\AbstractR
             'ssl_invoice_number' => $this->getSslInvoiceNumber(),
         );
 
-        if ($this->get3dSecureValue()) {
+        if (!empty($this->get3dSecureValue())) {
             $data = array_merge($data, [
                 'ssl_eci_ind' => $this->getEciInd(),
                 'ssl_3dsecure_value' => $this->get3dSecureValue(),
@@ -483,7 +483,7 @@ abstract class ConvergeAbstractRequest extends \Omnipay\Common\Message\AbstractR
             ]);
         }
 
-        if ($this->getAvsAddress()) {
+        if (!empty($this->getAvsAddress())) {
             $data = array_merge($data, [
                 'ssl_avs_address' => $this->getAvsAddress(),
                 'ssl_avs_zip' => $this->getAvsZip(),

@@ -119,6 +119,20 @@ class ConvergeGateway extends AbstractGateway
             'password' => '',
             'ssl_show_form' => false,
             'ssl_result_format' => 'ASCII',
+
+            // 3D Secure
+            'ssl_eci_ind' => '',
+            'ssl_3dsecure_value' => '',
+            'ssl_program_protocol' => '',
+            'ssl_dir_server_tran_id' => '',
+            'ssl_3ds_server_trans_id' => '',
+            'ssl_3ds_message_version' => '',
+            'ssl_3ds_trans_status' => '',
+            'ssl_3ds_trans_status_reason' => '',
+
+            // AVS
+            'ssl_avs_address' => '',
+            'ssl_avs_zip' => '',
         );
     }
 
